@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen">
+    <style>
+        body{
+            font-family: 'Oxygen';
+        }
+        .grid-container{
+            display: flex;
+            flex-direction: row;
+            grid-column-gap: 50px;
+
+        }
+        .btn {
+            margin-top : 10px;
+            background-color: #008CBA;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+        h3{
+            background-color: gray;
+            padding : 10px;
+        }
+
+        .grid-item{
+            width : 100%;
+            background-color: black;
+            color: white;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.75), 0 6px 20px 0 rgba(0,0,0,0.35);
+        }
+
+    </style>
+</head>
+<body>
+<div class="jumbotron" style="background-color:#595959;color:white">
+    <center><h1>News Aggregator</h1>
+        <a href="/" class="btn">Get Latest News</a>
+        </form>
+    </center>
+</div>
+<div class="grid-container">
+
+    <div class="grid-item">
+        <h3 class="text-centre"> News from Times of India</h3>
+        {% for n in toi_news %}
+        <h5 style="margin-left: 10px"> - {{n}} </h5>
+        <hr style="color:white;background-color:white">
+        {% endfor %}
+        <br>
+    </div>
+    <div class="grid-item">
+        <h3 class="text-centre">News from NDTV news </h3>
+        {% for hn in ndtv_news %}
+        <h5 style="margin-left: 10px"> - {{hn}} </h5>
+        <hr style="color:white;background-color:white">
+        {% endfor %}
+        <br>
+    </div>
+
+
+</div>
+<script
+        src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>
